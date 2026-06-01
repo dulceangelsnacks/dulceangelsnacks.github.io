@@ -495,8 +495,7 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="modalMontajes" tabindex="-1" aria-labelledby="modalMontajesLabel" aria-hidden="true">
+<div class="modal fade" id="modalMontajes" tabindex="-1" aria-labelledby="modalMontajesLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header bg-dark text-white">
@@ -508,14 +507,14 @@
                     
                     <div class="row align-items-center mb-4">
                         <div class="col-12 text-center px-md-5">
-                            <p class="text-muted fs-5">Cuidamos la presentation de cada snack y la armonía de la decoración. Nos adaptamos por completo a la temática de tu fiesta (cumpleaños, bodas, graduaciones o eventos empresariales) para que todo luce espectacular.</p>
+                            <p class="text-muted fs-5">Cuidamos la presentación de cada snack y la armonía de la decoración. Nos adaptamos por completo a la temática de tu fiesta (cumpleaños, bodas, graduaciones o eventos empresariales) para que todo luzca espectacular.</p>
                         </div>
                     </div>
 
                     <div class="row g-3 justify-content-center">
                         <div class="col-6 col-md-4">
                             <div class="galeria-item">
-                                <img src="imagenes/montaje2.jpeg" alt="Montaje elegante" class="galeria-img">
+                                <img src="imagenes/montaje2.jpeg" alt="Montaje elegant" class="galeria-img">
                             </div>
                         </div>
                         <div class="col-6 col-md-4">
@@ -547,19 +546,20 @@
             </div>
         </div>
     </div>
+
     <footer class="bg-dark text-white text-center py-4" style="border-top: 1px solid #343a40;">
         <div class="container mb-3">
             <p class="text-white-50 small mb-3">¡Síguenos en nuestras redes sociales y no te pierdas ningún evento!</p>
             
-            <a href="#" target="_blank" class="text-white mx-3 fs-2" style="transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#1877F2'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#fff'; this.style.transform='scale(1)';">
+            <a href="https://www.facebook.com/people/Dulce-%C3%81ngel-snacks/61573904550835/?mibextid=wwXIfr&rdid=YqTTNvIpQykL4FrI&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1bbUKLZjCL%2F%3Fmibextid%3DwwXIfr" target="_blank" class="text-white mx-3 fs-2" style="transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#1877F2'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#fff'; this.style.transform='scale(1)';">
                 <i class="fab fa-facebook"></i>
             </a>
             
-            <a href="#" target="_blank" class="text-white mx-3 fs-2" style="transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#E1306C'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#fff'; this.style.transform='scale(1)';">
+            <a href="https://www.instagram.com/dulceangel.gdl?igsh=MWoyOWgwZ240bjV2bg%3D%3D" target="_blank" class="text-white mx-3 fs-2" style="transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#E1306C'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#fff'; this.style.transform='scale(1)';">
                 <i class="fab fa-instagram"></i>
             </a>
             
-            <a href="#" target="_blank" class="text-white mx-3 fs-2" style="transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#00f2fe'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#fff'; this.style.transform='scale(1)';">
+            <a href="https://www.tiktok.com/@dulceangel.gdl?_r=1&_t=ZS-96qpK70SRKD" target="_blank" class="text-white mx-3 fs-2" style="transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#00f2fe'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#fff'; this.style.transform='scale(1)';">
                 <i class="fab fa-tiktok"></i>
             </a>
         </div>
@@ -594,32 +594,13 @@
             });
 
             const myModalCapturas = document.getElementById('modalCapturas');
-            myModalCapturas.addEventListener('shown.bs.modal', function () {
-                swiperReviews.update();
-            });
+            if (myModalCapturas) {
+                myModalCapturas.addEventListener('shown.bs.modal', function () {
+                    swiperReviews.update();
+                });
+            }
         });
     </script>
-
-
-    <footer class="bg-dark text-white text-center py-4" style="border-top: 1px solid #343a40;">
-        <div class="container mb-3">
-            <p class="text-white-50 small mb-3">¡Síguenos en nuestras redes sociales y no te pierdas ningún evento!</p>
-            
-            <a href="https://www.facebook.com/people/Dulce-%C3%81ngel-snacks/61573904550835/?mibextid=wwXIfr&rdid=YqTTNvIpQykL4FrI&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1bbUKLZjCL%2F%3Fmibextid%3DwwXIfr" target="_blank" class="text-white mx-3 fs-2" style="transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#1877F2'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#fff'; this.style.transform='scale(1)';">
-                <i class="fab fa-facebook"></i>
-            </a>
-            
-            <a href="https://www.instagram.com/dulceangel.gdl?igsh=MWoyOWgwZ240bjV2bg%3D%3D" target="_blank" class="text-white mx-3 fs-2" style="transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#E1306C'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#fff'; this.style.transform='scale(1)';">
-                <i class="fab fa-instagram"></i>
-            </a>
-            
-            <a href="https://www.tiktok.com/@dulceangel.gdl?_r=1&_t=ZS-96qpK70SRKD" target="_blank" class="text-white mx-3 fs-2" style="transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#00f2fe'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#fff'; this.style.transform='scale(1)';">
-                <i class="fab fa-tiktok"></i>
-            </a>
-        </div>
-        <hr class="border-secondary my-3" style="max-width: 300px; margin: 0 auto; opacity: 0.3;">
-        <p class="mb-0 text-white-50" style="font-size: 0.9rem;">&copy; 2026 DulceAngel - Todos los derechos reservados.</p>
-    </footer>
 
 </body>
 </html>
