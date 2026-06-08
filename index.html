@@ -16,171 +16,76 @@
                         url('imagenes/hero.jpeg') center center fixed;
             background-size: cover;
             color: #212529;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        /* DISEÑO DE LA CABECERA (HERO) */
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('imagenes/hero.jpeg') center/cover fixed;
-            color: white;
-            padding: 120px 0;
-        }
-        
-        /* Estilos generales para las tarjetas con imagen de fondo */
-        .card-bg-effect {
-            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('imagenes/hero.jpeg') no-repeat center center;
             background-size: cover;
-            background-position: center;
-            overflow: hidden;
-            border-width: 2px !important;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        /* Capa oscura/difuminada sobre la imagen para que el texto se lee perfecto */
-        .card-bg-effect::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.85); /* Fondo blanco con 85% de transparencia */
-            transition: background 0.3s ease;
-            z-index: 1;
-        }
-        /* Efecto al pasar el mouse por encima */
-        .card-bg-effect:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
-        }
-        .card-bg-effect:hover::before {
-            background: rgba(255, 255, 255, 0.72); /* Se aclara un poquito al pasar el mouse */
-        }
-        /* Asegura que el texto quede por encima de la imagen de fondo */
-        .card-bg-effect .card-body {
-            position: relative;
-            z-index: 2;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
 
-        /* Asignación de imágenes específicas a cada tarjeta */
-        .bg-dulces { background-image: url('imagenes/dulce1.jpeg'); }
-        .bg-salados { background-image: url('imagenes/salado1.jpeg'); }
-        .bg-montajes { background-image: url('imagenes/montaje3.jpeg'); }
-
-        /* Colores para la tarjeta de Montajes (Negro Formal) */
-        .border-purple { border-color: #212529 !important; }
-        .bg-purple { background-color: #212529 !important; }
-        .btn-purple { color: #fff; background-color: #212529; border-color: #212529; }
-        .btn-purple:hover { color: #fff; background-color: #111111; border-color: #111111; }
-        .btn-outline-purple { color: #212529; border-color: #212529; }
-        .btn-outline-purple:hover { color: #fff; background-color: #212529; border-color: #212529; }
-
-        /* Estilos para la sección llamativa de Reseñas en Negro Formal con Fondo Real */
-        .reviews-section {
-            background: linear-gradient(135deg, rgba(30, 34, 37, 0.95) 0%, rgba(0, 0, 0, 0.97) 100%), 
-                        url('imagenes/hero.jpeg') no-repeat center center !important;
-            background-size: cover !important;
-            background-attachment: fixed !important; /* Efecto Parallax premium */
-        }
-        .review-card {
-            background: white;
+        /* EFECTO HOVER EN LAS TARJETAS */
+        .card-servicio {
+            transition: all 0.3s ease-in-out;
             border: none;
             border-radius: 15px;
-            transition: transform 0.3s ease;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
         }
-        .review-card:hover {
-            transform: translateY(-5px);
-        }
-        .text-gold {
-            color: #ffc107;
-            font-size: 1.2rem;
-        }
-        
-        /* Forzamos que los nombres pasen de morado a Dorado Elegante */
-        .text-purple { 
-            color: #ffc107 !important; 
+        .card-servicio:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
         }
 
-        /* Hacer las secciones transparentes para que luzca el fondo de la página */
-        .bg-light {
-            background-color: rgba(248, 249, 250, 0.4) !important;
-        }
-
-        /* NUEVOS ESTILOS PARA LA GALERÍA DE MONTAJES TOTALMENTE ALINEADA */
+        /* GALERÍA DE IMÁGENES (DENTRO DE LOS MODALES) */
         .galeria-item {
+            position: relative;
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border: 2px solid #e9ecef;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #fff;
-        }
-        .galeria-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            height: 250px; /* Altura fija para que todas se vean parejas */
         }
         .galeria-img {
             width: 100%;
-            height: 220px; /* Forzamos la misma altura para todas */
-            object-fit: cover; /* Recorte limpio estilo Instagram, sin deformar */
-            display: block;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .galeria-item:hover .galeria-img {
+            transform: scale(1.08);
         }
 
-        /* 2. NUEVOS ESTILOS EXCLUSIVOS PARA EL CARRUSEL DE LAS CAPTURAS DE PANTALLA */
-        .swiper-container-reviews {
-            width: 100%;
-            padding: 20px 10px 45px 10px;
-        }
-        .chat-slide {
-            height: auto;
-        }
-        .chat-card-box {
-            background: #fff;
-            padding: 8px;
-            border-radius: 16px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s ease;
-        }
-        .chat-card-box:hover {
-            transform: scale(1.02);
-        }
-        .chat-img-styled {
-            width: 100%;
-            object-fit: contain;    /* Evita que los chats se estiren o se aplasten feo */
-            border-radius: 10px;
-            display: block;
-        }
-        /* Personalización de los botones del carrusel */
-        .swiper-button-next-custom, .swiper-button-prev-custom {
-            color: #ffc107 !important;
-            background: rgba(255, 255, 255, 0.9);
-            width: 45px !important;
-            height: 45px !important;
-            border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        .swiper-button-next-custom::after, .swiper-button-prev-custom::after {
-            font-size: 1.2rem !important;
-            font-weight: bold;
-        }
-        .swiper-pagination-bullet-active {
-            background: #ffc107 !important;
+        /* BOTONES REDONDEADOS */
+        .btn-custom {
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-weight: 600;
         }
 
-        /* 5. NUEVO: ESTILO PARA ELIMINAR RENGLONES GRISES EN MODALES DULCES Y SALADOS */
-        .menu-limpio-lista {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 0;
-        }
-        .menu-limpio-item {
-            padding: 10px 15px;
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: #333;
-            border: none !important;      /* Quita el borde de renglón */
-            background: transparent !important; /* Quita el fondo gris */
+        /* DISEÑO DE CAPTURAS DE PANTALLA (RESEÑAS) */
+        .swiper-slide {
             display: flex;
+            justify-content: center;
             align-items: center;
+            padding: 10px;
         }
-        .menu-limpio-icon {
-            margin-right: 12px;
-            font-size: 1.2rem;
+        .captura-review {
+            max-width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        .captura-review:hover {
+            transform: scale(1.02);
         }
     </style>
 </head>
@@ -188,290 +93,216 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-                <img src="imagenes/logo.jpeg" alt="Logo DulceAngelSnacks" height="40" class="d-inline-block align-top me-2 rounded-circle shadow-sm" style="object-fit: cover; width: 40px;">
-                DulceAngelSnacks
+            <a class="navbar-brand fw-bold fs-3 text-white d-flex align-items-center" href="#">
+                <img src="imagenes/logo.jpeg" alt="Logo DulceAngel" width="45" height="45" class="rounded-circle me-2 border border-2 border-white" onerror="this.src='https://via.placeholder.com/45'">
+                DulceAngel <span class="text-warning ms-1" style="font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Snacks</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#snacks">Nuestros Snacks</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#reseñas">Reseñas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                <ul class="navbar-nav ms-auto gap-2 text-center py-3 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-3" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#servicios">Nuestros Snacks</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#testimonios">Opiniones</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 btn btn-warning text-dark fw-bold ms-lg-3 px-4 rounded-pill" href="#contacto">Cotizar</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header id="inicio" class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-3">Los mejores Snacks para tu Evento</h1>
-            <p class="lead mb-4">Hacemos que tus fiestas, bodas y reuniones tengan el mejor sabor.</p>
-            <a href="#contacto" class="btn btn-warning btn-lg fw-bold text-white px-4 py-2 shadow">Cotizar Gratis</a>
+    <header id="inicio" class="hero-section text-center text-white">
+        <div class="container px-4">
+            <h1 class="display-2 fw-black mb-3 text-uppercase" style="letter-spacing: 2px;">DulceAngel</h1>
+            <p class="lead fs-3 mb-5 fw-light text-light opacity-90">Hacemos que tu evento sea inolvidable con la mejor presentación y sabor.</p>
+            <div class="d-sm-flex justify-content-center gap-3">
+                <a href="#servicios" class="btn btn-warning btn-lg btn-custom text-dark px-5 shadow mb-3 mb-sm-0">Ver Menú</a>
+                <a href="#contacto" class="btn btn-outline-light btn-lg btn-custom px-5 shadow">Escríbenos</a>
+            </div>
         </div>
     </header>
 
-    <section id="snacks" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-2 fw-bold display-6">¿Qué te ofrecemos?</h2>
-            <p class="text-center text-muted mb-5">👇 Haz clic en cualquiera para ver fotos y detalles</p>
-            
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-5">
-                    <div class="card h-100 shadow-sm border-warning card-bg-effect bg-dulces" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalDulces">
-                        <div class="card-body text-center py-4">
-                            <h3 class="card-title h5 fw-bold text-warning mb-3">🍭 Snacks Dulces</h3>
-                            <p class="card-text text-dark fw-medium">Fresas con crema, Fresas con chocolate, Fresas Dubai, Crepas Dulces, Mini Churros, Minihotcakes, Chocobananas, Biónicos, Nieves de Garrafa, Mini Cake, Paletas Heladas, Nieves Raspadas para consentir a tus invitados.</p>
-                            <span class="btn btn-outline-warning btn-sm mt-3 fw-bold px-3">Ver galería y menú</span>
-                        </div>
-                    </div>
-                </div>
+    <section id="servicios" class="container py-5 my-4">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold text-dark position-relative d-inline-block pb-3">
+                Nuestras Especialidades
+                <span class="position-absolute bottom-0 start-50 translate-middle-x bg-warning rounded" style="width: 80px; height: 4px;"></span>
+            </h2>
+            <p class="text-muted fs-5 mt-3">Descubre las delicias ideales para consentir a todos tus invitados</p>
+        </div>
 
-                <div class="col-md-5">
-                    <div class="card h-100 shadow-sm border-danger card-bg-effect bg-salados" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalSalados">
-                        <div class="card-body text-center py-4">
-                            <h3 class="card-title h5 fw-bold text-danger mb-3">🌽 Snacks Salados</h3>
-                            <p class="card-text text-dark fw-medium">Vasitos de elote, Tostilocos, Tostielotes, Vasos Locos, Crepas Saladas, Salchipulpos y papas a la francesa, Maruchan Bar, Maruchan con elote, Fruta Picada, Charcutería que a todos les encantan.</p>
-                            <span class="btn btn-outline-danger btn-sm mt-3 text-danger fw-bold px-3">Ver galería y menú</span>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm card-servicio text-center p-4">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="bg-warning-subtle text-warning rounded-circle d-inline-flex p-4 mb-4 fs-1 shadow-sm">🍩</div>
+                            <h3 class="card-title fw-bold text-dark h4 mb-3">Apartado Dulce</h3>
+                            <p class="card-text text-muted">Exquisitas fresas con chocolate, manzanas decoradas, repostería fina, donas decoradas y una gran variedad de dulces premium.</p>
                         </div>
+                        <button class="btn btn-dark btn-custom mt-4 shadow-sm" data-bs-toggle="modal" data-bs-target="#modalDulces">Explorar Galería</button>
                     </div>
                 </div>
             </div>
 
-            <div class="row g-4 justify-content-center mt-2">
-                <div class="col-md-5">
-                    <div class="card h-100 shadow-sm border-purple card-bg-effect bg-montajes" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalMontajes">
-                        <div class="card-body text-center py-4">
-                            <h3 class="card-title h5 fw-bold text-dark mb-3">📸 Montajes y Decoración</h3>
-                            <p class="card-text text-dark fw-medium">Ejemplos de cómo lucirá tu mesa. Cuidamos cada detalle para que tu evento sea inolvidable y espectacular.</p>
-                            <span class="btn btn-outline-purple btn-sm mt-3 fw-bold px-3">Ver galería y montajes</span>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm card-servicio text-center p-4">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="bg-danger-subtle text-danger rounded-circle d-inline-flex p-4 mb-4 fs-1 shadow-sm">🍟</div>
+                            <h3 class="card-title fw-bold text-dark h4 mb-3">Apartado Salado</h3>
+                            <p class="card-text text-muted">Vasitos locos, papas preparadas con aderezos, locosnacks llenos de sabor y las mejores botanas con nuestro toque picante y único.</p>
                         </div>
+                        <button class="btn btn-dark btn-custom mt-4 shadow-sm" data-bs-toggle="modal" data-bs-target="#modalSalados">Explorar Galería</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm card-servicio text-center p-4">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="bg-success-subtle text-success rounded-circle d-inline-flex p-4 mb-4 fs-1 shadow-sm">✨</div>
+                            <h3 class="card-title fw-bold text-dark h4 mb-3">Nuestros Montajes</h3>
+                            <p class="card-text text-muted">Cuidamos la presentación de cada snack y la armonía de la decoración. Nos adaptamos por completo a la temática de tu fiesta.</p>
+                        </div>
+                        <button class="btn btn-dark btn-custom mt-4 shadow-sm" data-bs-toggle="modal" data-bs-target="#modalMontajes">Ver Montajes</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="reseñas" class="py-5 reviews-section text-white text-center shadow-inner">
-        <div class="container">
-            <h2 class="fw-bold mb-2 display-5">⭐ Nuestras Reseñas ⭐</h2>
-            <p class="lead mb-5 text-white-50">Lo que nuestros clientes opinan de nuestro servicio</p>
-            
+    <section id="testimonios" class="bg-white py-5 shadow-sm border-top border-bottom">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-dark position-relative d-inline-block pb-3">
+                    Clientes Felices ⭐
+                    <span class="position-absolute bottom-0 start-50 translate-middle-x bg-warning rounded" style="width: 80px; height: 4px;"></span>
+                </h2>
+                <p class="text-muted fs-5 mt-3">Echa un vistazo a los mensajes y opiniones reales de quienes confían en nuestro servicio</p>
+            </div>
 
-            <div class="row justify-content-center mt-5 pt-2">
-                <div class="col-md-6 text-center">
-                    <button type="button" class="btn btn-lg fw-bold shadow px-4 py-3" data-bs-toggle="modal" data-bs-target="#modalCapturas" style="background-color: #f7d060; color: #212529; border: none; border-radius: 30px;">
-                        Recomendaciones de Clientes
-                    </button>
+            <div class="position-relative px-md-5">
+                <div class="swiper swiper-container-reviews overflow-hidden">
+                    <div class="swiper-wrapper mb-5">
+                        <div class="swiper-slide">
+                            <img src="imagenes/reseña1.jpeg" alt="Review DulceAngel 1" class="captura-review">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imagenes/reseña2.jpeg" alt="Review DulceAngel 2" class="captura-review">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imagenes/reseña3.jpeg" alt="Review DulceAngel 3" class="captura-review">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imagenes/reseña4.jpeg" alt="Review DulceAngel 4" class="captura-review">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imagenes/reseña5.jpeg" alt="Review DulceAngel 5" class="captura-review">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imagenes/reseña6.jpeg" alt="Review DulceAngel 6" class="captura-review">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imagenes/reseña7.jpeg" alt="Review DulceAngel 7" class="captura-review">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imagenes/reseña8.jpeg" alt="Review DulceAngel 8" class="captura-review">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </div> </section>
 
-    <section id="contacto" class="py-5 text-center">
-        <div class="container">
-            <h2 class="fw-bold mb-3">¿Listo para armar tu paquete? ☺️</h2>
-            <p class="lead mb-4">Haz clic abajo y platícanos qué tipo de evento tienes. ¡Te responderemos de inmediato!</p>
-            <a href="https://wa.me/523314590459?text=Hola,%20me%20interesa%20una%20cotizacion%20para%20un%20evento" target="_blank" class="btn btn-success btn-lg px-5 py-3 fw-bold shadow">
-                🟢 Enviar Mensaje por WhatsApp
+    <section id="contacto" class="container py-5 my-5 text-center px-4">
+        <div class="bg-dark text-white rounded-4 p-5 shadow max-width: 800px; margin: 0 auto;">
+            <h2 class="display-5 fw-bold mb-3 text-warning">¡Cotiza tu Evento! 📝</h2>
+            <p class="lead mb-5 text-light opacity-75">Platícanos la fecha, lugar y número de invitados de tu evento para enviarte un presupuesto a la medida.</p>
+            <a href="https://wa.me/523326159672?text=Hola!%20Me%20gustaría%20recibir%20información%20y%20una%20cotización%20para%20un%20evento%20con%20DulceAngel%20Snacks." target="_blank" class="btn btn-success btn-lg btn-custom px-5 fs-5 shadow-sm transform-scale-hover">
+                <i class="fab fa-whatsapp me-2"></i> Enviar Mensaje por WhatsApp
             </a>
         </div>
     </section>
 
-    <div class="modal fade" id="modalCapturas" tabindex="-1" aria-labelledby="modalCapturasLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header bg-warning text-white">
-                    <h5 class="modal-title fw-bold" id="modalCapturasLabel">💬 Opiniones reales de WhatsApp</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body bg-light">
-                    <p class="lead text-center fw-semibold mb-4 text-dark">Nuestra mejor garantía es la felicidad de quienes confían en nosotros 🥳</p>
-                    
-                    <div class="swiper swiper-container-reviews">
-                        <div class="swiper-wrapper">
-                            
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña1.jpeg" alt="Recomendación 1" class="chat-img-styled border">
-                                </div>
-                            </div>
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña2.jpeg" alt="Recomendación 2" class="chat-img-styled border">
-                                </div>
-                            </div>
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña3.jpeg" alt="Recomendación 3" class="chat-img-styled border">
-                                </div>
-                            </div>
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña4.jpeg" alt="Recomendación 4" class="chat-img-styled border">
-                                </div>
-                            </div>
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña5.jpeg" alt="Recomendación 5" class="chat-img-styled border">
-                                </div>
-                            </div>
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña6.jpeg" alt="Recomendación 6" class="chat-img-styled border">
-                                </div>
-                            </div>
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña7.jpeg" alt="Recomendación 7" class="chat-img-styled border">
-                                </div>
-                            </div>
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña8.jpeg" alt="Recomendación 8" class="chat-img-styled border">
-                                </div>
-                            </div>
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña9.jpeg" alt="Recomendación 9" class="chat-img-styled border">
-                                </div>
-                            </div>
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña10.jpeg" alt="Recomendación 10" class="chat-img-styled border">
-                                </div>
-                            </div>
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña11.jpeg" alt="Recomendación 11" class="chat-img-styled border">
-                                </div>
-                            </div>
-                            <div class="swiper-slide chat-slide">
-                                <div class="chat-card-box">
-                                    <img src="imagenes/reseña12.jpeg" alt="Recomendación 12" class="chat-img-styled border">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="swiper-button-next swiper-button-next-custom"></div>
-                        <div class="swiper-button-prev swiper-button-prev-custom"></div>
-                        
-                        <div class="swiper-pagination"></div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <a href="#contacto" class="btn btn-warning text-white fw-bold" data-bs-dismiss="modal">¡Quiero apartar mi fecha!</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="modal fade" id="modalDulces" tabindex="-1" aria-labelledby="modalDulcesLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
-                <div class="modal-header bg-warning text-white">
-                    <h5 class="modal-title fw-bold" id="modalDulcesLabel">🍭 Nuestro Menú Dulce</h5>
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title fw-bold" id="modalDulcesLabel">🍩 Galería de Snacks Dulces</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body bg-white"> <p class="lead text-center fw-semibold mb-4 text-dark">¡Una explosión de sabor dulce para tus fiestas!</p>
-                    <div class="row align-items-center">
-                        <div class="col-lg-5 mb-4 mb-lg-0">
-                            <ul class="menu-limpio-lista">
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> Deliciosas Fresas con crema</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> Fresas con chocolate</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> Fresas Dubai</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> Crepas dulces riquísimas</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> MiniChurros</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> MiniHotcakes</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> Chocobananas</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> Biónicos</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> Nieves de garrafa</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> Minicake</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> Paletas Heladas</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">✨</span> Nieves Raspadas</li>
-                            </ul>
+                <div class="modal-body bg-light">
+                    <p class="lead text-center fw-semibold text-dark mb-4">Descubre nuestras opciones más dulces y deliciosas ✨</p>
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/dulce1.jpeg" alt="Snack Dulce" class="galeria-img"></div>
                         </div>
-                        <div class="col-lg-7">
-                            <div class="row g-2 text-center">
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce1.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 1"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce2.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 2"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce3.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 3"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce4.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 4"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce5.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 5"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce6.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 6"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce7.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 7"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce8.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 8"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce9.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 8"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce10.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 8"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce11.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 8"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce12.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 8"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce13.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 8"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce14.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 8"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce15.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 8"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce16.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 8"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce17.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 8"></div>
-                                <div class="col-6 col-sm-3"><img src="imagenes/dulce18.jpeg" class="img-fluid rounded shadow-sm border" alt="Dulce 8"></div>
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/dulce2.jpeg" alt="Snack Dulce" class="galeria-img"></div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/dulce3.jpeg" alt="Snack Dulce" class="galeria-img"></div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/dulce4.jpeg" alt="Snack Dulce" class="galeria-img"></div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/dulce5.jpeg" alt="Snack Dulce" class="galeria-img"></div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/dulce6.jpeg" alt="Snack Dulce" class="galeria-img"></div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/dulce7.jpeg" alt="Snack Dulce" class="galeria-img"></div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/dulce8.jpeg" alt="Snack Dulce" class="galeria-img"></div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <a href="#contacto" class="btn btn-warning text-white fw-bold" data-bs-dismiss="modal">Cotizar esta Mesa</a>
+                    <a href="#contacto" class="btn btn-dark text-white fw-bold" data-bs-dismiss="modal">Cotizar mi Evento</a>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="modal fade" id="modalSalados" tabindex="-1" aria-labelledby="modalSaladosLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title fw-bold" id="modalSaladosLabel">🔥 Variedad Salada y Picosita</h5>
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title fw-bold" id="modalSaladosLabel">🍟 Galería de Snacks Salados</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body bg-white"> <p class="lead text-center fw-semibold text-dark">¡Para los amantes de lo picante y crujiente!</p>
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <ul class="menu-limpio-lista">
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">🌶️</span> Papas preparadas con clamato y salsas</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">🌶️</span> Elotes en vaso con quesito y chile</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">🌶️</span> Tostilocos y Tostielotes</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">🌶️</span> Crepas saladas</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">🌶️</span> Salchipulpos y papas a la francesa</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">🌶️</span> Maruchan Bar y Maruchan con Elote</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">🌶️</span> Fruta picada fresca de temporada</li>
-                                <li class="menu-limpio-item"><span class="menu-limpio-icon">🌶️</span> Charcutería deliciosa</li>
-                            </ul>
+                <div class="modal-body bg-light">
+                    <p class="lead text-center fw-semibold text-dark mb-4">Nuestras ricas botanas preparadas y locosnacks 🔥</p>
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/salado1.jpeg" alt="Snack Salado" class="galeria-img"></div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="row g-2">
-                                <div class="col-6"><img src="imagenes/salado1.jpeg" alt="Salado 1" class="img-fluid rounded shadow-sm border"></div>
-                                <div class="col-6"><img src="imagenes/salado2.jpeg" alt="Salado 2" class="img-fluid rounded shadow-sm border"></div>
-                                <div class="col-6"><img src="imagenes/salado3.jpeg" alt="Salado 3" class="img-fluid rounded shadow-sm border"></div>
-                                <div class="col-6"><img src="imagenes/salado4.jpeg" alt="Salado 4" class="img-fluid rounded shadow-sm border"></div>
-                                <div class="col-6"><img src="imagenes/salado5.jpeg" alt="Salado 4" class="img-fluid rounded shadow-sm border"></div>
-                                <div class="col-6"><img src="imagenes/salado6.jpeg" alt="Salado 4" class="img-fluid rounded shadow-sm border"></div>
-                                <div class="col-6"><img src="imagenes/salado7.jpeg" alt="Salado 4" class="img-fluid rounded shadow-sm border"></div>
-                                <div class="col-6"><img src="imagenes/salado8.jpeg" alt="Salado 4" class="img-fluid rounded shadow-sm border"></div>
-                                <div class="col-6"><img src="imagenes/salado9.jpeg" alt="Salado 4" class="img-fluid rounded shadow-sm border"></div>
-                                <div class="col-6"><img src="imagenes/salado10.jpeg" alt="Salado 4" class="img-fluid rounded shadow-sm border"></div>
-                            </div>
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/salado2.jpeg" alt="Snack Salado" class="galeria-img"></div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/salado3.jpeg" alt="Snack Salado" class="galeria-img"></div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="galeria-item"><img src="imagenes/salado4.jpeg" alt="Snack Salado" class="galeria-img"></div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <a href="#contacto" class="btn btn-danger fw-bold" data-bs-dismiss="modal">Cotizar esta Mesa</a>
+                    <a href="#contacto" class="btn btn-dark text-white fw-bold" data-bs-dismiss="modal">Cotizar mi Evento</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="modal fade" id="modalMontajes" tabindex="-1" aria-labelledby="modalMontajesLabel" aria-hidden="true">
+
+    <div class="modal fade" id="modalMontajes" tabindex="-1" aria-labelledby="modalMontajesLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header bg-dark text-white">
@@ -490,7 +321,7 @@
                     <div class="row g-3 justify-content-center">
                         <div class="col-6 col-md-4">
                             <div class="galeria-item">
-                                <img src="imagenes/montaje2.jpeg" alt="Montaje elegant" class="galeria-img">
+                                <img src="imagenes/montaje 2.jpeg" alt="Montaje elegante" class="galeria-img">
                             </div>
                         </div>
                         <div class="col-6 col-md-4">
@@ -500,7 +331,7 @@
                         </div>
                         <div class="col-6 col-md-4">
                             <div class="galeria-item">
-                                <img src="imagenes/montaje4.jpeg" alt="Montaje buffet" class="galeria-img">
+                                <img src="imagenes/montaje 4.jpeg" alt="Montaje buffet" class="galeria-img">
                             </div>
                         </div>
                         <div class="col-6 col-md-4">
@@ -510,22 +341,7 @@
                         </div>
                         <div class="col-6 col-md-4">
                             <div class="galeria-item">
-                                <img src="imagenes/montaje6.jpeg" alt="Mesa de snacks" class="galeria-img">
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="galeria-item">
-                                <img src="imagenes/montaje7.jpeg" alt="Montaje buffet" class="galeria-img">
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="galeria-item">
-                                <img src="imagenes/montaje8.jpeg" alt="Montaje buffet" class="galeria-img">
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="galeria-item">
-                                <img src="imagenes/montaje9.jpeg" alt="Montaje buffet" class="galeria-img">
+                                <img src="imagenes/montaje1.jpeg" alt="Mesa de snacks" class="galeria-img">
                             </div>
                         </div>
                     </div>
